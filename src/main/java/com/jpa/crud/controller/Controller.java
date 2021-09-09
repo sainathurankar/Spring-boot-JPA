@@ -18,11 +18,6 @@ public class Controller {
     @Autowired
     private EmployeeServiceInterface employeeService;
 
-    @GetMapping(path = "/")
-    public String home()
-    {
-        return "Welcome. Working fine!";
-    }
     @GetMapping(path = "/show")
     public ResponseEntity<List<Employee>> getAllEmployee(){
         System.out.println("getting all employees");

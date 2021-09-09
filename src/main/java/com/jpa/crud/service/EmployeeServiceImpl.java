@@ -22,8 +22,7 @@ public class EmployeeServiceImpl implements EmployeeServiceInterface {
         try {
 
             List<Employee> empList = repository.findAll();
-            if (empList.isEmpty())
-                throw new BusinessException("604", "List is empty. Nothing to return");
+
             return empList;
         }
         catch (Exception e)

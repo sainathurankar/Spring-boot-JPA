@@ -12,6 +12,7 @@ import javax.persistence.*;
 public class Employee {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
     private String first_name;
     private String last_name;

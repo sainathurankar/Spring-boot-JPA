@@ -9,7 +9,9 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 @RestController
 @RequestMapping(path = "/employees")
@@ -19,9 +21,11 @@ public class Controller {
     private EmployeeServiceInterface employeeService;
 
     @GetMapping(path = "/show")
-    public ResponseEntity<List<Employee>> getAllEmployee(){
+    public ResponseEntity<?> getAllEmployee(){
         System.out.println("getting all employees");
-        return new ResponseEntity<>(employeeService.getEmployees(),HttpStatus.OK);
+        Map map = new HashMap<String,List<Employee>>();
+        map.put("employees",employeeService.getEmployees());
+        return new ResponseEntity<>(map,HttpStatus.OK);
     }
 
     @PostMapping(path = "/save")

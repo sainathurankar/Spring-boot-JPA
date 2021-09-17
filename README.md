@@ -41,3 +41,7 @@ Note: Replace {id} by employee id
 
 To update employee 
 https://springboot-employee-jpa.herokuapp.com/employees/update
+
+Example: {"id": {id}, "first_name":"nascnja","last_name":"ancjsnasj","phone":null,"email":"njcan","street":"ncjasn","city":"jncsaj","state":"cjasn","zip_code":14450}
+
+Note: Replace {id} with existing Employee id in database
